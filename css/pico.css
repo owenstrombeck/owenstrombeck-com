@@ -2831,3 +2831,21 @@ details .cardListSummaryRow{
     max-height: 700px;
   }
 }
+
+
+
+/**
+* swccg hyperdrive page specifics
+*/
+
+
+.hyperdrive-pack {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+    gap: 5px; /* Adds space between grid cells */
+}
+
+
+
+
+
