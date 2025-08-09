@@ -78,7 +78,7 @@ class HPack extends HTMLElement {
 		super();
 	}
 	connectedCallback() {
-		var side = this.getAttribute('side');
+		var side = this.getAttribute('side').toLowerCase();
 		var setCode = this.getAttribute('setCode');
 		var effectName = this.getAttribute('effectName');
 		var effectImageName = `${setCode}${effectName.replace(/\s+/g, '').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "")}200r50.webp`;
@@ -108,7 +108,7 @@ class HCard extends HTMLElement {
 	}
 	connectedCallback() {
 
-		var side = this.getAttribute('side');
+		var side = this.getAttribute('side').toLowerCase();
 		var setCode = this.getAttribute('setCode');
 		var typeIconName = this.getAttribute('type').toLowerCase();
 		switch(typeIconName) {
