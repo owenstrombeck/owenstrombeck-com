@@ -81,7 +81,7 @@ class HPack extends HTMLElement {
 		var side = this.getAttribute('side').toLowerCase();
 		var setCode = this.getAttribute('setCode');
 		var effectName = this.getAttribute('effectName');
-		var effectImageName = `${side.toLowerCase()}-${setCode.toLowerCase()}-${effectName.replace(/\s+/g, '-').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "")}.webp`;
+		var effectImageName = `${side.toLowerCase()}-${setCode.toLowerCase()}-${effectName.replace(/\s+/g, '-').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "").toLowerCase()}.webp`;
 		var effectAltName = effectName.replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "");
 		this.innerHTML = `
 		<details>
