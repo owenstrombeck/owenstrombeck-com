@@ -81,7 +81,7 @@ class HPack extends HTMLElement {
 		var side = this.getAttribute('side').toLowerCase();
 		var setCode = this.getAttribute('setCode');
 		var effectName = this.getAttribute('effectName');
-		var effectImageName = `${setCode}${effectName.replace(/\s+/g, '').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "")}200r50.webp`;
+		var effectImageName = `${side.toLowerCase()}-${setCode.toLowerCase()}-${effectName.replace(/\s+/g, '-').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "")}.webp`;
 		var effectAltName = effectName.replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "");
 		this.innerHTML = `
 		<details>
@@ -93,7 +93,7 @@ class HPack extends HTMLElement {
 						<div id="${side}-${setCode}-pack-cardlist">
 						</div>
 						<div class="hyperdrive-card-image">
-							<img id="${setCode}CardImage" class="cardImage" src="images/${side}/${setCode}/${effectImageName}" loading="lazy" alt="${effectAltName}">
+							<img id="${setCode}CardImage" class="cardImage" src="images/cards/${effectImageName}" loading="lazy" alt="${effectAltName}">
 						</div>
 					</div>
 				</p>
@@ -120,13 +120,13 @@ class HCard extends HTMLElement {
 				break;
 		}
 		var cardName = this.getAttribute('name');
-		var cardImageName = `${setCode}${cardName.replace(/\s+/g, '').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "")}200r50.webp`;
+		var cardImageName = `${side.toLowerCase()}-${setCode.toLowerCase()}-${cardName.replace(/\s+/g, '-').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "").toLowerCase()}.webp`;
 		var cardImageAltName = cardName.replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "");
 
 		document.getElementById(`${side}-${setCode}-pack-cardlist`).innerHTML += `
 			<img src="images/${typeIconName}.webp" alt="${typeIconName}"/>
 			<a onclick="
-				getElementById('${setCode}CardImage').setAttribute('src', 'images/${side}/${setCode}/${cardImageName}');
+				getElementById('${setCode}CardImage').setAttribute('src', 'images/cards/${cardImageName}');
 				getElementById('${setCode}CardImage').setAttribute('alt', '${cardImageAltName}');
 			"> ${cardName} </a>
 			</br>
