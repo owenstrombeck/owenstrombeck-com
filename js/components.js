@@ -84,11 +84,16 @@ class HPack extends HTMLElement {
 		var effectImageName = `${side.toLowerCase()}-${setCode.toLowerCase()}-${effectName.replace(/\s+/g, '-').replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "").replace(/!/g, "").replace(/,/g, "").replace(/\./g, "").toLowerCase()}.webp`;
 		var effectAltName = effectName.replace(/([^:]*):/g,'$1').replace(/\//g, "").replace(/'/g, "").replace(/’/g, "");
 		this.innerHTML = `
-		<details>
+			<details>
 				<summary>
 					<strong>${setCode} - ${effectName}</strong>
 				</summary>
 				<p>
+					<div class="hyperdrive-printsheet">
+						Print Sheet = <a href="printsheets/${side.toLowerCase()}-${setCode.toLowerCase()}-printsheet.pdf" target="_blank" 
+						rel="noopener noreferrer">${side.toLowerCase()}-${setCode.toLowerCase()}-printsheet.pdf</a>
+						</br></br>
+					</div>
 					<div class="hyperdrive-pack">
 						<div id="${side}-${setCode}-pack-cardlist">
 						</div>
